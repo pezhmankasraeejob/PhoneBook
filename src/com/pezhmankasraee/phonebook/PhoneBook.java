@@ -59,7 +59,6 @@ public class PhoneBook {
 				dbMan.showAllPhones();
 				break;
 			case "2":
-				
 				enterDataForInsert(dbMan);
 				break;
 
@@ -68,7 +67,7 @@ public class PhoneBook {
 				break;
 
 			case "4":
-				System.out.println("4");
+				enterUpdateRecord(dbMan);
 				break;
 
 			case "5":
@@ -86,6 +85,28 @@ public class PhoneBook {
 
 		dbConn.closeConnection();
 
+	}
+
+
+
+	/**
+	 * @param dbMan
+	 */
+	private static void enterUpdateRecord(DbManager dbMan) {
+		// TODO: update
+		String fullname = null;
+		
+		try {
+			Scanner updSc = new Scanner(System.in);
+			
+			System.out.print("Enter fullname: ");
+			fullname = updSc.nextLine();
+			
+			dbMan.updateRecord(fullname);
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 

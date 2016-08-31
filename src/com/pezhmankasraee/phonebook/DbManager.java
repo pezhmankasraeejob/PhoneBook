@@ -206,8 +206,9 @@ public class DbManager {
 
 		PreparedStatement preStmt = null;
 		ResultSet rs = this.findRecord(fullname);
-		Scanner sc = new Scanner(System.in);
 		try {
+			Scanner sc = new Scanner(System.in);
+			
 			if (rs.isBeforeFirst()) {
 				while (rs.next()) {
 					shapeOutput(rs);
@@ -252,8 +253,6 @@ public class DbManager {
 				System.out.println("<<< The record (" + fullname.toUpperCase() + ") was not found. >>>");
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
-		} finally {
-			sc.close();
 		}
 
 	}

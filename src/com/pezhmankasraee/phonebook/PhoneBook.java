@@ -71,7 +71,7 @@ public class PhoneBook {
 				break;
 
 			case "5":
-				System.out.println("5");
+				enterSearchRecord(dbMan);
 				break;
 
 			default:
@@ -92,8 +92,27 @@ public class PhoneBook {
 	/**
 	 * @param dbMan
 	 */
+	private static void enterSearchRecord(DbManager dbMan) {
+		String fullname = null;
+		
+		try{
+			Scanner findSc = new Scanner(System.in);
+			
+			System.out.print("Enter fullname: ");
+			fullname = findSc.nextLine();
+			
+			dbMan.searchRecords(fullname);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+
+
+	/**
+	 * @param dbMan
+	 */
 	private static void enterUpdateRecord(DbManager dbMan) {
-		// TODO: update
 		String fullname = null;
 		
 		try {

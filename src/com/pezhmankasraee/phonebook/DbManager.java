@@ -262,8 +262,6 @@ public class DbManager {
 		query.append("WHERE f_fullname LIKE ?");
 		long counter = 0L;
 		
-		System.out.println("\n"+query.toString()+"\n");
-
 		PreparedStatement preStmt = null;
 		ResultSet rs = null;
 		try {
@@ -278,7 +276,7 @@ public class DbManager {
 			}
 
 			System.out.println("Total number of record(s) that maches the phrase ("
-					+ word + "): " + counter + ".");
+					+ word.toUpperCase() + "): " + counter + ".");
 			System.out.println("<<< End of search report >>>");
 
 		} catch (SQLException e) {

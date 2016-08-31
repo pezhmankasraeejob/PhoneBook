@@ -59,11 +59,12 @@ public class PhoneBook {
 				dbMan.showAllPhones();
 				break;
 			case "2":
+				
 				enterDataForInsert(dbMan);
 				break;
 
 			case "3":
-				// TODO: delete a record.
+				enterDeleteRecord(dbMan);
 				break;
 
 			case "4":
@@ -85,6 +86,27 @@ public class PhoneBook {
 
 		dbConn.closeConnection();
 
+	}
+
+
+
+	/**
+	 * @param dbMan
+	 */
+	private static void enterDeleteRecord(DbManager dbMan) {
+		String fullname = null;
+		try{
+			Scanner delSc = new Scanner(System.in);
+			
+			System.out.print("Enter fullname: ");
+			fullname = delSc.nextLine();
+			
+			
+			dbMan.deleteRecord(fullname);
+			
+		} catch (Exception e){
+			System.out.println(e.getMessage());
+		}
 	}
 
 

@@ -4,7 +4,7 @@
 package com.pezhmankasraee.phonebook.person;
 
 /**
- * @author pezhman
+ * @author pezhman kasraee
  *
  */
 public interface Personage {
